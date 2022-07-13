@@ -125,3 +125,11 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Переходы
+# Куда идти после логина
+LOGIN_REDIRECT_URL = '/'     # на Главную страницу
+# Куда идти после выхода
+LOGOUT_REDIRECT_URL = '/'    # на Главную страницу
+# Куда идти, если НЕТ прав (если неправильно введен login & password)
+LOGIN_URL = '/women/login/'  # снова на страницу входа
