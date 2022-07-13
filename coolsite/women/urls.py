@@ -1,7 +1,10 @@
-from django.urls import path
+from django.urls import path, re_path
 from women.views import * # чтобы не красное верхний coolsite Mark Sources Root
 
 urlpatterns = [   # здесь прописываем все маршруты текущего приложения
-    path('', index),  # http://127.0.0.1:8000/ - направляем на функцию index
-    path('cats/<int:catid>/', categories), # http://127.0.0.1:8000/cats/2/ на categories
+    path('', index, name='home'),# http://127.0.0.1:8000/ - направляем на функцию index
+    path('addpage/', addpage, name='addpage'), #  - направляем на функцию about
+    path('order/', order, name='order'),  #  - направляем на функцию contact
+    path('post/<int:post_id>/', post, name="post"), # - направляем на post
+    path('category/<int:cat_id>/', category, name="category"), # - направляем на category
 ]

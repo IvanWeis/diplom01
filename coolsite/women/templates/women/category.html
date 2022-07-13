@@ -1,0 +1,20 @@
+{% extends 'women/base.html' %}
+
+{% block title %}CATEGORY{% endblock %}
+
+{% block content %}
+    <h3>Категории</h3>
+    {% for c in cats %}
+        <li><a href="{{c.get_absolute_url}}">{{ c.name }}</a></li>
+    {% endfor %}
+
+    <br>
+    <h3>Товары</h3>
+    {% for p in posts %}
+        <p>Наименование: {{ p.title }}</p>  <!-- выводим имя Товара -->
+        <p>Лот: {{ p.id }}</p>     <!-- выводим id Товара -->
+        <p>Цена: {{ p.price }}</p>  <!-- выводим price Товара -->
+        <a href="{{p.get_absolute_url}}">ПОДРОБНО</a><!-- Кнопка ПОДРОБНО  -->
+        <hr>
+    {% endfor %}
+{% endblock %}
