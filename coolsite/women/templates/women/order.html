@@ -1,0 +1,13 @@
+{% extends 'women/base.html' %}
+
+{% block title %}CONTACT{% endblock %}
+
+{% block content %}
+    <h1>Форма Заказа</h1>
+    <p>Заполните поля</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
+{% endblock %}

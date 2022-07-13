@@ -1,0 +1,12 @@
+{% extends 'women/base.html' %}
+
+{% block title %}ABOUT{% endblock %}
+
+{% block content %}
+    <h1>Добавление Товара</h1>
+    <form action="{% url 'addpage' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'women/base.html' %}
+
+{% block title %}POST{% endblock %}
+
+{% block content %}
+    <h3>{{ post.title }}</h3>   <!-- выводим имя Товара -->
+    <p>Лот {{ post.id }}</p>     <!-- выводим id Товара -->
+    <p>Цена: {{ post.price }} рублей</p>  <!-- выводим price Товара -->
+    <p><img src = "{{ post.photo.url }}" width=150px /></p>
+{% endblock %}
