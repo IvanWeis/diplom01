@@ -3,18 +3,127 @@
 {% block title %}CATEGORY{% endblock %}
 
 {% block content %}
-    <h3>Категории</h3>
-    {% for c in cats %}
-        <li><a href="{{c.get_absolute_url}}">{{ c.name }}</a></li>
-    {% endfor %}
+<body id="category">
 
-    <br>
-    <h3>Товары</h3>
-    {% for p in posts %}
-        <p>Наименование: {{ p.title }}</p>  <!-- выводим имя Товара -->
-        <p>Лот: {{ p.id }}</p>     <!-- выводим id Товара -->
-        <p>Цена: {{ p.price }}</p>  <!-- выводим price Товара -->
-        <a href="{{p.get_absolute_url}}">ПОДРОБНО</a><!-- Кнопка ПОДРОБНО  -->
-        <hr>
-    {% endfor %}
+<!-- Start Header Area -->
+<!-- End Header Area -->
+
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Shop Category page</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-5">
+            <!-- Категории -->
+            <div class="sidebar-categories">
+                <div class="head">Browse Categories</div>
+                <ul class="main-categories">
+                    {% for c in cats %}
+                     <li class="main-nav-list"><a href="{{c.get_absolute_url}}" aria-expanded="false" aria-controls="fruitsVegetable">{{ c.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Фильтры -->
+            <!-- Конец Фильтры -->
+
+        </div>
+
+        <div class="col-xl-9 col-lg-8 col-md-7">
+
+            <!-- Start Filter Bar -->
+            <!-- End Filter Bar -->
+
+            <!-- Start Best Seller -->
+            <section class="lattest-product-area pb-40 category-list">
+                <div class="row">
+
+                    <!-- Товары -->
+                    <!-- single product(Мои) -->
+                    {% for p in posts %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-product">
+                            <img class="img-fluid" src="{{ p.photo.url }}" alt="">
+                            <div class="product-details">
+                                <h6>{{ p.title }}__ Лот: {{ p.id }}</h6>
+                                <div class="price">
+                                    <h6>{{ p.price }} руб.</h6>
+                                    <h6 class="l-through">{{ p.price }} руб.</h6>
+                                </div>
+                                <div class="prd-bottom">
+                                    <a href="{{p.get_absolute_url}}" class="social-info">
+                                        <span class="lnr lnr-move"></span>
+                                        <p class="hover-text">view more</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <!-- single product1 -->
+         <!--       <div class="col-lg-4 col-md-6">
+                        <div class="single-product">
+                            <img class="img-fluid" src="/static/img/product/p1.jpg" alt="">
+                            <div class="product-details">
+                                <h6>addidas New Hammer sole
+                                    for Sports person</h6>
+                                <div class="price">
+                                    <h6>$150.00</h6>
+                                    <h6 class="l-through">$210.00</h6>
+                                </div>
+                                <div class="prd-bottom">
+
+                                    <a href="" class="social-info">
+                                        <span class="ti-bag"></span>
+                                        <p class="hover-text">add to bag</p>
+                                    </a>
+                                    <a href="" class="social-info">
+                                        <span class="lnr lnr-heart"></span>
+                                        <p class="hover-text">Wishlist</p>
+                                    </a>
+                                    <a href="" class="social-info">
+                                        <span class="lnr lnr-sync"></span>
+                                        <p class="hover-text">compare</p>
+                                    </a>
+                                    <a href="" class="social-info">
+                                        <span class="lnr lnr-move"></span>
+                                        <p class="hover-text">view more</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </section>
+            <!-- End Best Seller -->
+
+            <!-- Start Filter Bar -->
+            <!-- End Filter Bar -->
+
+        </div>
+    </div>
+</div>
+
+<!-- Start related-product Area -->
+<!-- End related-product Area -->
+
+<!-- start footer Area -->
+<!-- End footer Area -->
+
+<!-- Modal Quick Product View -->
+<!-- End Modal Quick Product View -->
+
+</body>
+</html>
 {% endblock %}
