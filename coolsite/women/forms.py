@@ -5,7 +5,9 @@ from .models import *
 class AddPostForm(forms.Form):  # наследование от Класса Form
     title = forms.CharField(max_length=255, label="Наименование")
     content = forms.CharField(widget=forms.Textarea(attrs={"cools":60, "rows":10}), label="Описание")
-    is_published = forms.BooleanField(label="Опубликовать")
+    price = forms.IntegerField(label="Цена")
+    photo = forms.ImageField(label="Фото")
+#   is_published = forms.BooleanField(label="Опубликовать")
     cat = forms.ModelChoiceField(queryset=Category.objects.all(), label="Категория", empty_label="Категория не выбрана")
 
 # Форма связанная с Базой Данных ===== Урок 14 =========================
@@ -18,5 +20,6 @@ class AddPostForm(forms.Form):  # наследование от Класса For
 
 class AddOrder(forms.Form):  # наследование от Класса Form
     name = forms.CharField(label="Ваше имя")
+    phone = forms.CharField(label="Ваш телефон")
     email = forms.EmailField(label="Ваш E-mail")
-    message = forms.CharField(label="Номер лота приобретаемого товара")
+    message = forms.CharField(label="Номер лота")

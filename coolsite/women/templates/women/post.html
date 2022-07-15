@@ -3,8 +3,34 @@
 {% block title %}POST{% endblock %}
 
 {% block content %}
-    <h3>{{ post.title }}</h3>   <!-- выводим имя Товара -->
-    <p>Лот {{ post.id }}</p>     <!-- выводим id Товара -->
-    <p>Цена: {{ post.price }} рублей</p>  <!-- выводим price Товара -->
-    <p><img src = "{{ post.photo.url }}" width=150px /></p>
+<body id="category">
+<div class="container">
+
+    <!-- Start Banner Area -->
+    <section class="banner-area organic-breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+                <div class="col-first">
+                    <h1>Tovar page</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Banner Area -->
+
+    <div class="container"> <!--сетка Bootstrap в одном контейнере 2 колонки -->
+        <div class="row">
+             <div class="col"> <!-- колонка 1 -->
+                <h3>{{ post.title }}</h3>   <!-- выводим имя Товара -->
+                <p>Лот {{ post.id }}</p>     <!-- выводим id Товара -->
+                <p>Цена: {{ post.price }} рублей</p>  <!-- выводим price Товара -->
+                <p><img src = "{{ post.photo.url }}" width=300px /></p>
+            </div>
+            <div class="col"> <!-- колонка 2 -->
+                <p>Описание: {{ post.content }}"</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 {% endblock %}
