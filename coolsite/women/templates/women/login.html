@@ -20,7 +20,8 @@
     <form method="post">
         {% csrf_token %} <!-- Безопасность -->
         {{ form.as_p }}
-        <button type="button" class="btn btn-primary">Войти</button>
+        <input type="submit" class="btn btn-primary" value="Зарегистрироваться" >
+<!--<button type="button" class="btn btn-primary">Войти</button>НЕ РАБОТАЕТ !!!-->
     </form>
     <br>
 </div>
